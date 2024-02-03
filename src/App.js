@@ -1,9 +1,12 @@
 import './App.css';
-import TemCards from './components/temCards'
+import GetTems from './api/getTems'
+import { useState } from 'react';
 
 function App() {
+  const [search, setSearch] = useState('')
+
   return (
-    <TemCards/>
+    <GetTems search={search} onSearchChange={setSearch}/>
   );
 }
 
