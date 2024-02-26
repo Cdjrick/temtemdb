@@ -97,9 +97,9 @@ function TemCard({ tem }) {
                             gap: 2
                         }}
                     >
-                        {tem.evolution.evolutionTree.map(({evo}) =>
+                        {/* {tem.evolution.evolutionTree.map(({evo}) =>
                             <Typography level="body-sm" sx={{ maxWidth: '24ch' }} key={evo.number}> {evo} </Typography>
-                        )}
+                        )} */}
                     </Box>
 
                 </CardContent>

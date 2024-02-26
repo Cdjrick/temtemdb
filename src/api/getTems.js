@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import TemCardsListView from '../components/temCardsListView'
+import Box from '@mui/material/Box'
+import TextField from '@mui/material/TextField'
 
 function GetTems({ search, onSearchChange }) {
     const [tems, setTems] = useState([])
@@ -40,14 +42,29 @@ function GetTems({ search, onSearchChange }) {
     if (tems.length !== 0) {
         return (
             <div>
-                <div className="searchBar">
+                {/* <div className="searchBar">
                     <input
                         type="text"
                         id="search"
                         placeholder="Enter a TemTem Name to Search"
                         onChange={(e) => handleFilterChange(e.target.value.toUpperCase())}
                     />
-                </div>
+                </div> */}
+                <Box
+                    sx={{
+                        width: 500,
+                        maxWidth: '100%',
+                        margin: 2,
+                        alignItems: 'center'
+                    }}
+                >
+                    <TextField fullWidth label="Search for a TemTem" id="fullWidth search"
+                        type="text"
+                        placeholder="Start entering a TemTem Name to Search"
+                        onChange={(e) => handleFilterChange(e.target.value.toUpperCase())}
+                    />
+                </Box>
+
                 <div>
                     {isEmpty ? (
                         <TemCardsListView tems={filteredTems} />
